@@ -13,7 +13,7 @@ export const profile = {
     twitter: '',
   },
   summary:
-    'Motivated final-year Bachelor of Technology student with a strong interest in web development and technology. Familiar with HTML, CSS, JavaScript, React, Node.js, C, C++, and Java, with good communication, teamwork, problem-solving, leadership, and public-speaking skills. Graduating soon and eager to apply technical knowledge and gain practical experience in software development.',
+    'Motivated final-year Bachelor of Technology student with a strong interest in web development and technology. Familiar with HTML, CSS, JavaScript, React, Node.js, MongoDB, MySQL, C, C++, and Java, with good communication, teamwork, problem-solving, leadership, and public-speaking skills. Graduating soon and eager to apply technical knowledge and gain practical experience in software development.',
 }
 
 export const technicalSkills = [
@@ -22,6 +22,8 @@ export const technicalSkills = [
   { name: 'JavaScript', level: 80 },
   { name: 'React', level: 78 },
   { name: 'Node.js', level: 75 },
+  { name: 'MongoDB', level: 70 },
+  { name: 'MySQL', level: 68 },
   { name: 'C / C++', level: 80 },
   { name: 'Java', level: 70 },
 ]
@@ -41,7 +43,7 @@ export const highlights = [
   },
   {
     title: 'Backend',
-    items: 'Node.js, RESTful APIs',
+    items: 'Node.js, RESTful APIs, MongoDB, MySQL',
   },
   {
     title: 'Programming',
