@@ -2,8 +2,6 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi'
 import { profile } from '../data/portfolioData'
 
 export default function Footer() {
-  const year = new Date().getFullYear()
-
   const socials = [
     profile.socials.github && { icon: FiGithub, href: profile.socials.github, label: 'GitHub' },
     profile.socials.linkedin && { icon: FiLinkedin, href: profile.socials.linkedin, label: 'LinkedIn' },
@@ -13,10 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-ink/5 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-ink/40">
-          &copy; {year} {profile.name}. Built with React &amp; Tailwind CSS.
-        </p>
+      <div className="max-w-6xl mx-auto flex items-center justify-center">
         <div className="flex items-center gap-4">
           {socials.map(({ icon: Icon, href, label }) => (
             <a
