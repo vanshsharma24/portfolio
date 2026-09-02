@@ -11,16 +11,16 @@ function SkillBar({ name, level, index }) {
       transition={{ duration: 0.4, delay: index * 0.05 }}
     >
       <div className="flex items-center justify-between mb-2 text-sm">
-        <span className="font-medium text-white/85">{name}</span>
-        <span className="text-white/40">{level}%</span>
+        <span className="font-medium text-ink/85">{name}</span>
+        <span className="text-ink/40">{level}%</span>
       </div>
-      <div className="h-2 w-full rounded-full bg-white/5 overflow-hidden">
+      <div className="h-2 w-full rounded-full bg-ink/5 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, delay: index * 0.05, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-blue-accent to-cyan-accent"
+          className="h-full rounded-full bg-gradient-to-r from-accent to-accent-cyan"
         />
       </div>
     </motion.div>
@@ -29,7 +29,7 @@ function SkillBar({ name, level, index }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 px-6 bg-navy-900/40">
+    <section id="skills" className="relative py-24 px-6 bg-bg-soft">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="Skills"
@@ -39,7 +39,7 @@ export default function Skills() {
 
         <div className="grid md:grid-cols-2 gap-10">
           <div className="glass-card rounded-2xl p-8">
-            <h3 className="font-display text-lg font-semibold text-white mb-6">Technical Skills</h3>
+            <h3 className="font-display text-lg font-semibold text-ink mb-6">Technical Skills</h3>
             <div className="space-y-5">
               {technicalSkills.map((skill, i) => (
                 <SkillBar key={skill.name} index={i} {...skill} />
@@ -48,7 +48,7 @@ export default function Skills() {
           </div>
 
           <div className="glass-card rounded-2xl p-8">
-            <h3 className="font-display text-lg font-semibold text-white mb-6">Soft Skills</h3>
+            <h3 className="font-display text-lg font-semibold text-ink mb-6">Soft Skills</h3>
             <div className="space-y-5">
               {softSkills.map((skill, i) => (
                 <SkillBar key={skill.name} index={i} {...skill} />

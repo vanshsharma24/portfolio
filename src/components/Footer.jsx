@@ -12,9 +12,9 @@ export default function Footer() {
   ].filter(Boolean)
 
   return (
-    <footer className="border-t border-white/5 py-10 px-6">
+    <footer className="border-t border-ink/5 py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-white/40">
+        <p className="text-sm text-ink/40">
           &copy; {year} {profile.name}. Built with React &amp; Tailwind CSS.
         </p>
         <div className="flex items-center gap-4">
@@ -25,7 +25,7 @@ export default function Footer() {
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noreferrer"
               aria-label={label}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/60 hover:text-white hover:bg-blue-accent/20 transition-colors"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-ink/5 text-ink/60 hover:text-ink hover:bg-accent/20 transition-colors"
             >
               <Icon size={16} />
             </a>

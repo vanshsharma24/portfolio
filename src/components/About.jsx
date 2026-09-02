@@ -23,16 +23,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="md:col-span-3 glass-card rounded-2xl p-8"
           >
-            <p className="text-white/70 leading-relaxed">{profile.summary}</p>
+            <p className="text-ink/70 leading-relaxed">{profile.summary}</p>
 
             <ul className="mt-6 space-y-3">
               {contactItems.map(({ icon: Icon, label, href }) => (
-                <li key={label} className="flex items-center gap-3 text-white/70">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-accent/15 text-blue-accent">
+                <li key={label} className="flex items-center gap-3 text-ink/70">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                     <Icon size={18} />
                   </span>
                   {href ? (
-                    <a href={href} className="hover:text-white transition-colors">
+                    <a href={href} className="hover:text-ink transition-colors">
                       {label}
                     </a>
                   ) : (
@@ -52,10 +52,10 @@ export default function About() {
           >
             {highlights.map((h) => (
               <div key={h.title} className="glass-card rounded-2xl p-6">
-                <p className="text-sm font-semibold text-blue-accent uppercase tracking-wide">
+                <p className="text-sm font-semibold text-accent uppercase tracking-wide">
                   {h.title}
                 </p>
-                <p className="mt-2 text-white/80 font-medium">{h.items}</p>
+                <p className="mt-2 text-ink/80 font-medium">{h.items}</p>
               </div>
             ))}
           </motion.div>

@@ -5,14 +5,28 @@
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  --color-navy-950: #050b1f;
-  --color-navy-900: #0a1128;
-  --color-navy-800: #0f1a3d;
-  --color-navy-700: #16234f;
-  --color-navy-600: #1c2c5e;
-  --color-blue-glow: #3b82f6;
-  --color-blue-accent: #4f7dfa;
-  --color-cyan-accent: #38bdf8;
+  /* Dark theme is the default token set */
+  --color-bg: #050b1f;
+  --color-bg-soft: #0a1128;
+  --color-surface: rgba(22, 35, 79, 0.5);
+  --color-ink: #e6ecff;
+  --color-line: rgba(148, 172, 255, 0.14);
+  --color-accent: #4f7dfa;
+  --color-accent-cyan: #38bdf8;
+  --color-glow: #3b82f6;
+  --color-grid: rgba(96, 137, 255, 0.18);
+}
+
+:root[data-theme='light'] {
+  --color-bg: #f7f9ff;
+  --color-bg-soft: #edf1fb;
+  --color-surface: rgba(255, 255, 255, 0.75);
+  --color-ink: #0f1a3d;
+  --color-line: rgba(15, 26, 61, 0.1);
+  --color-accent: #2f5fe0;
+  --color-accent-cyan: #0891b2;
+  --color-glow: #93b4ff;
+  --color-grid: rgba(47, 95, 224, 0.12);
 }
 
 html {
@@ -20,14 +34,15 @@ html {
 }
 
 body {
-  background-color: var(--color-navy-950);
-  color: #e6ecff;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: var(--color-blue-accent);
+  background: var(--color-accent);
   color: white;
 }
 
@@ -35,14 +50,14 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-navy-950);
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-navy-600);
+  background: var(--color-line);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-blue-accent);
+  background: var(--color-accent);
 }
 
 .font-display {
@@ -57,12 +72,13 @@ body {
 }
 
 .glass-card {
-  background: linear-gradient(180deg, rgba(22, 35, 79, 0.55), rgba(10, 17, 40, 0.55));
-  border: 1px solid rgba(96, 137, 255, 0.15);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
   backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .grid-bg {
-  background-image: radial-gradient(rgba(96, 137, 255, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(var(--color-grid) 1px, transparent 1px);
   background-size: 26px 26px;
 }

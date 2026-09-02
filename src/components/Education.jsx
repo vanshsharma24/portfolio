@@ -20,12 +20,12 @@ export default function Education() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="glass-card rounded-2xl p-6 flex items-start gap-4"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-accent/15 text-blue-accent">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                   <HiOutlineAcademicCap size={20} />
                 </span>
                 <div>
-                  <h3 className="font-display font-semibold text-white">{item.degree}</h3>
-                  <p className="mt-1 text-sm text-white/60">{item.school}</p>
+                  <h3 className="font-display font-semibold text-ink">{item.degree}</h3>
+                  <p className="mt-1 text-sm text-ink/60">{item.school}</p>
                 </div>
               </motion.div>
             ))}
@@ -39,15 +39,15 @@ export default function Education() {
             className="glass-card rounded-2xl p-6"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-accent/15 text-cyan-accent">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-cyan/15 text-accent-cyan">
                 <HiOutlineStar size={20} />
               </span>
-              <h3 className="font-display font-semibold text-white">Achievements</h3>
+              <h3 className="font-display font-semibold text-ink">Achievements</h3>
             </div>
             <ul className="space-y-2">
               {achievements.map((item) => (
-                <li key={item} className="text-sm text-white/65 flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-accent" />
+                <li key={item} className="text-sm text-ink/65 flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-cyan" />
                   {item}
                 </li>
               ))}
