@@ -71,7 +71,7 @@ export default function Hero() {
             <FiDownload /> Download Resume
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href="#contact"
             className="inline-flex items-center gap-2 rounded-full border border-ink/15 hover:border-ink/30 px-6 py-3 text-sm font-semibold text-ink/90 transition-colors"
           >
             <HiOutlineMail /> Contact Me
