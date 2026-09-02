@@ -21,7 +21,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent mb-6"
         >
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          Open to Internships &amp; Entry-Level Roles
+          Open to Internships &amp; Full-Time Opportunities
         </motion.p>
 
         <motion.h1

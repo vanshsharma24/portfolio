@@ -23,8 +23,15 @@ export default function Education() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                   <HiOutlineAcademicCap size={20} />
                 </span>
-                <div>
-                  <h3 className="font-display font-semibold text-ink">{item.degree}</h3>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h3 className="font-display font-semibold text-ink">{item.degree}</h3>
+                    {item.period && (
+                      <span className="text-xs font-medium text-accent bg-accent/10 rounded-full px-3 py-1">
+                        {item.period}
+                      </span>
+                    )}
+                  </div>
                   <p className="mt-1 text-sm text-ink/60">{item.school}</p>
                 </div>
               </motion.div>

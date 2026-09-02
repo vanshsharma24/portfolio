@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Vansh',
-  role: 'Bachelor of Technology Student',
+  role: 'Final Year B.Tech Student',
   title: 'Entry Level Web Developer',
   tagline: 'Eager to learn, build, and contribute to innovative projects while growing as a full-stack developer.',
   email: 'vanshsharmaynr006@gmail.com',
@@ -13,7 +13,7 @@ export const profile = {
     twitter: '',
   },
   summary:
-    'Motivated Bachelor of Technology student with a strong interest in web development and technology. Familiar with HTML, CSS, JavaScript, React, Node.js, C, C++, and Java, with good communication, teamwork, problem-solving, leadership, and public-speaking skills. Eager to apply technical knowledge and gain practical experience in software development.',
+    'Motivated final-year Bachelor of Technology student with a strong interest in web development and technology. Familiar with HTML, CSS, JavaScript, React, Node.js, C, C++, and Java, with good communication, teamwork, problem-solving, leadership, and public-speaking skills. Graduating soon and eager to apply technical knowledge and gain practical experience in software development.',
 }
 
 export const technicalSkills = [
@@ -95,7 +95,7 @@ export const education = [
   {
     degree: 'Bachelor of Technology (B.Tech)',
     school: 'Seth Jai Prakash Mukand Lal Institute of Engineering and Technology',
-    period: '',
+    period: '2023 – 2027 (Expected)',
   },
   {
     degree: 'Senior Secondary Education',

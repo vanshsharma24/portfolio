@@ -21,7 +21,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something together"
-          description="Open to internships, entry-level roles, and collaborative projects. Reach out anytime."
+          description="Open to internships, full-time roles, and collaborative projects. Reach out anytime."
         />
 
         <div className="grid md:grid-cols-5 gap-8">
