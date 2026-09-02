@@ -1,11 +1,18 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi'
 import { profile } from '../data/portfolioData'
 import SectionHeading from './SectionHeading'
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const emailjsConfigured = Boolean(SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY)
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
@@ -14,6 +21,31 @@ export default function Contact() {
   const mailtoHref = `mailto:${profile.email}?subject=${encodeURIComponent(
     `Portfolio inquiry from ${form.name || 'a visitor'}`
   )}&body=${encodeURIComponent(`${form.message}\n\nFrom: ${form.name} (${form.email})`)}`
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!emailjsConfigured) return
+
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_email: profile.email,
+        },
+        { publicKey: PUBLIC_KEY }
+      )
+      setStatus('success')
+      setForm({ name: '', email: '', message: '' })
+    } catch (err) {
+      console.error('EmailJS send failed:', err)
+      setStatus('error')
+    }
+  }
 
   return (
     <section id="contact" className="relative py-24 px-6 bg-bg-soft">
@@ -56,6 +88,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -69,6 +102,7 @@ export default function Contact() {
               <input
                 id="name"
                 name="name"
+                required
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your name"
@@ -83,6 +117,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                required
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
@@ -97,18 +132,41 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={4}
+                required
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Tell me about the opportunity..."
                 className="w-full rounded-lg bg-ink/5 border border-ink/10 px-4 py-2.5 text-sm text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors resize-none"
               />
             </div>
-            <a
-              href={mailtoHref}
-              className="inline-flex w-full items-center justify-center rounded-lg bg-accent hover:bg-accent/90 px-5 py-3 text-sm font-semibold text-white transition-colors shadow-lg shadow-glow/20"
-            >
-              Send Message
-            </a>
+
+            {emailjsConfigured ? (
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="inline-flex w-full items-center justify-center rounded-lg bg-accent hover:bg-accent/90 px-5 py-3 text-sm font-semibold text-white transition-colors shadow-lg shadow-glow/20 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
+              </button>
+            ) : (
+              <a
+                href={mailtoHref}
+                className="inline-flex w-full items-center justify-center rounded-lg bg-accent hover:bg-accent/90 px-5 py-3 text-sm font-semibold text-white transition-colors shadow-lg shadow-glow/20"
+              >
+                Send Message
+              </a>
+            )}
+
+            {status === 'success' && (
+              <p className="text-sm text-emerald-400 text-center">
+                Message sent successfully! I'll get back to you soon.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="text-sm text-red-400 text-center">
+                Something went wrong. Please try again or email me directly.
+              </p>
+            )}
           </motion.form>
         </div>
       </div>
