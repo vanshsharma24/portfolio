@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vansh | Web Developer Portfolio
 
 A modern, responsive personal portfolio built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
@@ -65,3 +66,7 @@ Without these set, the button falls back to opening the visitor's own email app 
 ## Deploy
 
 This is a static Vite app — deploy the `dist/` folder to **Vercel**, **Netlify**, or **GitHub Pages**. Remember to add the same `VITE_EMAILJS_*` environment variables in your hosting provider's dashboard so the contact form works on the live site.
+=======
+# portfolio
+it is a online resume
+>>>>>>> d30293a98a6fbd3c5e5065df6fbed07b774d1926
