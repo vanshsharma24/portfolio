@@ -66,6 +66,20 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'Campus Lost & Found',
+    date: '2026',
+    description:
+      'A full-stack web app that helps students and staff report lost items and find items others have found on campus.',
+    points: [
+      'Replaces scattered WhatsApp groups and notice boards with a single searchable platform.',
+      'Secure claim-and-approval workflow to return items to their rightful owners.',
+      'Deployed on production-grade cloud infrastructure (Vercel + Render) at zero cost.',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
+    liveUrl: 'https://campus-lost-found-two-gamma.vercel.app',
+    repoUrl: '',
+  },
+  {
     title: 'To-Do List Web Application',
     date: 'May 2026',
     description: 'A task management app built with HTML, CSS, and JavaScript.',

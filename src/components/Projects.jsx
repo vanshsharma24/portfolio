@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
-import { HiOutlineClipboardCheck, HiOutlineCash } from 'react-icons/hi'
+import { HiOutlineClipboardCheck, HiOutlineCash, HiOutlineSearch } from 'react-icons/hi'
 import { projects } from '../data/portfolioData'
 import SectionHeading from './SectionHeading'
 
-const icons = [HiOutlineClipboardCheck, HiOutlineCash]
+const icons = [HiOutlineSearch, HiOutlineClipboardCheck, HiOutlineCash]
 
 export default function Projects() {
   return (
@@ -13,7 +13,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Things I've built"
-          description="Hands-on projects applying core JavaScript concepts and front-end fundamentals."
+          description="Hands-on projects, from front-end fundamentals to full-stack apps deployed in production."
         />
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -69,6 +69,8 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.liveUrl || '#'}
+                    target={project.liveUrl ? '_blank' : undefined}
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-ink/70 hover:text-ink transition-colors"
                   >
                     <FiExternalLink /> Live Demo
